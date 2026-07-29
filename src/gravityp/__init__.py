@@ -4,19 +4,36 @@ compact objects in General Relativity.
 
 Source:    https://github.com/alvaroslzar/GRAVITYp
 """
-from importlib.metadata import metadata, PackageNotFoundError
 from .module import *
+
+
+import email.utils
+from importlib.metadata import metadata, PackageNotFoundError
 
 __name__ = "gravityp"
 
 try:
     _meta = metadata(__name__)
-    __version__ = _meta["Version"]
-    __author__ = _meta["Author"]
-    __email__ = _meta["Author-email"]
-    
+    __version__ = _meta.get("Version", "0.0.1")
+
+    # setuptools packs pyproject.toml authors into the 'Author-email' header
+    _author_email_header = _meta.get("Author-email")
+
+    if _author_email_header:
+        # Parse header into [("Name", "email@domain.com"), ...]
+        _parsed_contacts = email.utils.getaddresses([_author_email_header])
+        
+        _names = [name for name, _ in _parsed_contacts if name]
+        _emails = [addr for _, addr in _parsed_contacts if addr]
+        
+        # Format as strings so help(gravityp) displays them cleanly
+        __author__ = ", ".join(_names) if _names else _meta.get("Author")
+        __email__ = ", ".join(_emails) if _emails else None
+    else:
+        __author__ = _meta.get("Author")
+        __email__ = None
+
 except PackageNotFoundError:
-    # Fallback if package is executed directly without pip installation
-    __version__ = "0.0.1"
-    __author__ = "G.J. Olmo, D. Rubiera-Garcia, J.L Rosa, D. S\'aez-Chill\'on and \'A. Salazar-Cuadros"
-    __email__ = "a.salazar@uva.es"
+    __version__ = "0.0.1-dev"
+    __author__ = "Gonzalo J. Olmo, Diego Rubiera-Garcia, João Luís Rosa, Diego Sáez-Chillón Gómez, Álvaro Salazar-Cuadros"
+    __email__ = None
