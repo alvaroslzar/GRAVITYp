@@ -4,7 +4,7 @@ version = "0.0.1"
 authors = [
   { name="Gonzalo J. Olmo", email="gonzalo.olmo@uv.es" },
   { name="Diego Rubiera Garcia", email="drubiera@ucm.es" },
-  { name="Alvaro Salazar-Cuadros", email="joaolude@ucm.es" },
+  { name="Joao Luis Rosa", email="joaolude@ucm.es" },
   { name="Diego Saez-Chillon Gomez", email="diego.saez@uva.es" },
   { name="Alvaro Salazar-Cuadros", email="a.salazar@uva.es" },
 ]
