@@ -1,0 +1,23 @@
+[project]
+name = "gravityp"
+version = "0.0.1"
+authors = [
+  { name="Gonzalo J. Olmo", email="gonzalo.olmo@uv.es" },
+  { name="Diego Rubiera Garcia", email="drubiera@ucm.es" },
+  { name="Alvaro Salazar-Cuadros", email="joaolude@ucm.es" },
+  { name="Diego Saez-Chillon Gomez", email="diego.saez@uva.es" },
+  { name="Alvaro Salazar-Cuadros", email="a.salazar@uva.es" },
+]
+description = "GRAVITYp is a Python library to study the optical appearance of spherically symmetric compact objects in General Relativity. It stands for Geodesic RAys and Visualization of IntensiTY profiles."
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/alvaroslzar/GRAVITYp"
+Issues = "https://github.com/alvaroslzar/GRAVITYp/issues"
