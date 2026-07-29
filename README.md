@@ -24,7 +24,15 @@ pip install -e .
 
 The use of **GRAVITYp** in scientific publications must be properly acknowledged. Please cite:
 
-*Add publication details / arXiv link here...*
+@software{Olmo_GRAVITYp_Geodesic_RAys_2026,
+    author = {Olmo, Gonzalo J. and Rubiera-García, Diego and Rosa, João Luís and Sáez-Chillón Gómez, Diego and Salazar-Cuadros, Álvaro},
+    license = {MIT},
+    month = jul,
+    title = {{GRAVITYp: Geodesic RAys and Visualization of IntensiTY profiles}},
+    url = {https://github.com/alvaroslzar/GRAVITYp},
+    version = {0.0.1},
+    year = {2026}
+}
 
 ## Published articles using GRAVITYp
 
