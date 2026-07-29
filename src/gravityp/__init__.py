@@ -5,6 +5,7 @@ compact objects in General Relativity.
 Source:    https://github.com/alvaroslzar/GRAVITYp
 """
 from importlib.metadata import metadata, PackageNotFoundError
+from .module import *
 
 __name__ = "gravityp"
 
