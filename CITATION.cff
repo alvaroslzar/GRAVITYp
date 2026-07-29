@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "GRAVITYp: Geodesic RAys and Visualization of IntensiTY profiles"
+abstract: "A Python library to study the optical appearance and shadows of spherically symmetric compact objects in General Relativity."
+authors:
+  - family-names: "Olmo"
+    given-names: "Gonzalo J."
+    orcid: "https://orcid.org/0000-0001-9857-0412"
+  - family-names: "Rubiera-Garcia"
+    given-names: "Diego"
+    orcid: "https://orcid.org/0000-0003-3984-9864"
+  - family-names: "Rosa"
+    given-names: "Jo{\~a}o Lu{\'\i}s"
+    orcid: "https://orcid.org/0000-0003-4148-7372"
+  - family-names: "Saez-Chillon Gomez"
+    given-names: "Diego"
+    orcid: "https://orcid.org/0000-0002-0714-2680"
+  - family-names: "Salazar-Cuadros"
+    given-names: "\'Alvaro"
+    orcid: "https://orcid.org/0009-0006-0252-9073"
+version: "0.0.1"
+date-released: "2026-07-29"
+repository-code: "https://github.com/alvaroslzar/GRAVITYp"
+keywords:
+  - general relativity
+  - ray tracing
+  - black holes
+  - compact objects
+  - shadows
+license: MIT
