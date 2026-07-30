@@ -553,7 +553,7 @@ def make_metric_function_plot(fun, params, r_range, figsize=(9,6), savepath=None
     ax.hlines(0, r_range[0], r_range[-1],color='black',linewidth=1)
     ax.legend()
     if savepath is not None:
-        plt.savefig(savepath, format='pdf')
+        plt.savefig(savepath)
     plt.show()
 
 def plot_half_graph(ax, bs, plot_label=False, **kwargs):
@@ -614,7 +614,7 @@ def plot_nturns(bs, b_crits, figsize=(7,7), savepath=None, **kwargs):
     ax.set_ylabel(r'$n=\phi /(2\pi)$')
     ax.legend(loc='upper right')
     if savepath is not None:
-        plt.savefig(savepath, format='pdf')
+        plt.savefig(savepath)
     plt.show()
 
 def plot_geodesic(axes, areal, areal_params, rr, phi, color=None):
@@ -666,7 +666,7 @@ def make_geodesics_plot(bs_dict, r_phs, inner_edge, radial_fun, radial_params, a
     ax2.set_yticks(np.arange(0, 11, 2))   # Ticks: 0, 1, 2, ..., 10
     
     if savepath is not None:
-        plt.savefig(savepath, format='pdf')
+        plt.savefig(savepath)
     plt.show()
 
 def plot_transfer_function(axes, bs, order, correction: float=0, **kwargs):
@@ -703,7 +703,7 @@ def make_transfer_function_plot(b_crits, kwargs, bs_list,
     ax.set_yticks(np.arange(0,16,5))
     
     if savepath is not None:
-        plt.savefig(savepath, format='pdf')
+        plt.savefig(savepath)
     plt.show()
 
 ## Intensity and shadows
@@ -739,7 +739,7 @@ def plot_emission_model(rs, emission_model, text_string=None,
         ax.text( 7.5, 0.8, s=text_string )
     # ax.legend()
     if savepath is not None:
-        plt.savefig(savepath, format='pdf')
+        plt.savefig(savepath)
     plt.show()
 
 def plot_observed_intensity(bs, bs_transfer_list, emission_model, kwargs,
@@ -756,7 +756,7 @@ def plot_observed_intensity(bs, bs_transfer_list, emission_model, kwargs,
     ax.set_ylim(y_range)
     ax.legend()
     if savepath is not None:
-        plt.savefig(savepath, format='pdf')
+        plt.savefig(savepath)
     plt.show()
 
 def plot_intensities(ax, z, vmin=None, vmax=None):
@@ -788,5 +788,5 @@ def make_shadow_plot(bs_transfer_list, emission_model, kwargs,
     plot_colorbar(fig, ax, im)
 
     if savepath is not None:
-        plt.savefig(savepath, format='pdf')
+        plt.savefig(savepath)
     plt.show()
