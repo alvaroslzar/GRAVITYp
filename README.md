@@ -57,9 +57,9 @@ The output image looks like this:
 
 For a more detailed explanation, check the Jupyter notebooks in the [Examples](Examples/) folder.
 
-### Images of black hole shadows
+### Intensity profiles and black hole shadows
 
-*Add shadows figures*
+*Add emitted + observed + shadow*
 
 ### Further references
 
