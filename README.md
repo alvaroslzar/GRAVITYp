@@ -4,7 +4,7 @@
 
 ## About the project
 
-**GRAVITYp** was originally a numerical code written in Wolfram language developed by G.J. Olmo, D. Rubiera-Garcia, J.L. Rosa and D. Sáez-Chillón. It was developed to study the optical appearance or *shadow* cast by black holes, wormholes and different kind of exotic compact objects, and it was inspired by the work by S.E. Gralla et al. [arXiv:1906.00873](https://arxiv.org/abs/1906.00873).
+**GRAVITYp** was originally a numerical code written in Wolfram language developed by G.J. Olmo, D. Rubiera-Garcia, J.L. Rosa and D. Sáez-Chillón. It was developed to study the optical appearance or *shadow* cast by black holes, wormholes and different kinds of exotic compact objects, and it was inspired by the work by S.E. Gralla et al. [arXiv:1906.00873](https://arxiv.org/abs/1906.00873).
 
 Then, Á. Salazar-Cuadros preferred to work on Python seeking faster execution times for simulations and a language better suited for Version Control Systems (VCS), and that's how this project was born.
 
@@ -19,6 +19,26 @@ git clone https://github.com/alvaroslzar/GRAVITYp.git
 cd GRAVITYp
 pip install -e .
 ```
+
+## Usage
+
+### Quick example
+
+*Add minimum executable snippet here*
+
+For a more detailed explanation, take a look at the Jupyter notebooks in the [Examples](Examples/) folder.
+
+### Examples of black hole shadows
+
+*Add shadows figures*
+
+### Further references
+
+Watch Prof. D. Rubiera-García's [talk](https://www.youtube.com/live/q0a4RXdxk4o?si=njtj2yOmCwim25ix) for an overview of the main concepts involved in the ray-tracing method and analysis of intensity profiles.
+
+For an introductory discussion of the inner workings of the Wolfram Mathematica code, watch Prof. G.J. Olmo's [tutorial](https://www.youtube.com/live/f5-s2gVd5xE?si=xCtJxFQikmkLehdU); while for a more user-friendly application, watch Dr. J.L. Rosa's [talk](https://www.youtube.com/live/9k8qMq9V814?si=MtXYMg0exd_6_37t).
+
+Finally, for a more advanced topic regarding compact objects, watch Prof. D. Sáez-Chillón [contribution](https://www.youtube.com/watch?v=8pR8kE_ABzQ).
 
 ## Citation
 
