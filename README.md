@@ -1,6 +1,6 @@
 # GRAVITYp
 
-**GRAVITYp** is a Python library to study the optical appearance of spherically symmetric compact objects in General Relativity. It stands for **G**eodesic **RA**ys and **V**isualization of **I**ntensi**TY** **p**rofiles. 
+**GRAVITYp** is a Python package to study the optical appearance of spherically symmetric compact objects in General Relativity. It stands for **G**eodesic **RA**ys and **V**isualization of **I**ntensi**TY** **p**rofiles. 
 
 ## About the project
 
@@ -8,7 +8,7 @@
 
 Then, Á. Salazar-Cuadros preferred to work on Python seeking faster execution times for simulations and a language better suited for Version Control Systems (VCS), and that's how this project was born.
 
-The goal of this open source version is provide open access to anyone interested in using the library or learning how simulated shadow images are generated.
+The goal of this open source version is provide open access to anyone interested in using the package or learning how simulated shadow images are generated.
 
 ## Installation
 
@@ -67,7 +67,7 @@ Watch Prof. D. Rubiera-García's [talk](https://www.youtube.com/live/q0a4RXdxk4o
 
 For an introductory discussion of the inner workings of the Wolfram Mathematica code, watch Prof. G.J. Olmo's [tutorial](https://www.youtube.com/live/f5-s2gVd5xE?si=xCtJxFQikmkLehdU); while for a more user-friendly application, watch Dr. J.L. Rosa's [talk](https://www.youtube.com/live/9k8qMq9V814?si=MtXYMg0exd_6_37t).
 
-Finally, for a more advanced topic regarding compact objects, watch Prof. D. Sáez-Chillón [contribution](https://www.youtube.com/watch?v=8pR8kE_ABzQ).
+Finally, for a more advanced topic regarding compact objects, watch Prof. D. Sáez-Chillón's [contribution](https://www.youtube.com/watch?v=8pR8kE_ABzQ).
 
 ## Citation
 
