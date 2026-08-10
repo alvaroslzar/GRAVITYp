@@ -19,6 +19,8 @@ Schwarzschild_kwargs = {
     'areal_params': None,   # g_thth has no additional params
 }
 
-# Array of impact parameters from 0M to 10M
-impact_parameters = np.arange(0,10,0.2)
-make_geodesics_plot(impact_parameters, figsize=(4,4), **Schwarzschild_kwargs)
+
+if __name__=='__main__':
+    # Array of impact parameters from 0M to 10M
+    impact_parameters = np.arange(0,10,0.2)
+    make_geodesics_plot(impact_parameters, figsize=(4,4), **Schwarzschild_kwargs)
