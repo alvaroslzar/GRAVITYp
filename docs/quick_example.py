@@ -10,7 +10,7 @@ def g_thth(r: float, dummy) -> float:
     return r**2
 
 # Dictionary codifying Schwarzschild metric and required params
-Schwarzschid_kwargs = {
+Schwarzschild_kwargs = {
     'r_phs': [3.,],         # Photon sphere at r=3M
     'inner_edge': 2.,       # Inner edge of disk at horizon r=2M
     'radial_fun': g_rr,     # Above defined radial function
@@ -21,4 +21,4 @@ Schwarzschid_kwargs = {
 
 # Array of impact parameters from 0M to 10M
 impact_parameters = np.arange(0,10,0.2)
-make_geodesics_plot(impact_parameters, figsize=(4,4), **Schwarzschid_kwargs)
+make_geodesics_plot(impact_parameters, figsize=(4,4), **Schwarzschild_kwargs)
