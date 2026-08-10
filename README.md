@@ -123,4 +123,4 @@ Let us know if you use **GRAVITYp** in your publication and we'll add it to this
 
 ## License
 
-The software is licensed under the MIT license (see LICENSE).
+The software is licensed under the MIT license (see [LICENSE](LICENSE)).
