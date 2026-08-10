@@ -59,7 +59,13 @@ For a more detailed explanation, check the Jupyter notebooks in the [Examples](E
 
 ### Intensity profiles and black hole shadows
 
-*Add emitted + observed + shadow*
+The main usage is to obtain the observed intensity profile $I_\mathrm{ob}(b)$ as a function of the impact parameter $b$ given some predefined emission profile $I_\mathrm{em}(r)$. The emitted light is due to the matter in the accretion disk, which is assumed to be both geometrically and optically thin. Moreover, the orientation is assumed to be face-on with respect to the accretion disk, so the optical appearance would have rotational symmetry.
+
+In the following images, the emission profile of the accretion disk has been chosen to peak at the event horizon $r=2M$, and the optical appearance corresponds to a Schwarzschild black hole. The code properly reproduces the predicted light rings up to two intersections with the accretion disk, as well as the central brightness depression or *shadow* characteristic of compact objects such as black holes.
+
+![emitted](docs/images/README_emitted.png)
+![observed](docs/images/README_observed.png)
+![shadow](docs/images/README_shadow.png)
 
 ### Further references
 
