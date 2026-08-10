@@ -719,7 +719,7 @@ def add_extra_tick(xticks, xticklabels, extra_tick=None, extra_ticklabel=None):
 def plot_emission_model(rs, emission_model, text_string=None,
                         tick=None, ticklabel=None, figsize=(7,7), savepath=None):
     fig, ax = plt.subplots(figsize=figsize)
-    ax.plot(rs, emission_model(rs))
+    ax.plot(rs, emission_model(rs), label=r'$I_{\mathrm{em}}/I_0$')
     
     rmin = round(rs.min())
     rmax = round(rs.max())
@@ -733,11 +733,11 @@ def plot_emission_model(rs, emission_model, text_string=None,
     ax.set_xticks(xticks)
     ax.set_xticklabels(xticklabels)
     ax.set_xlim(rmin,rmax)
-    ax.set_ylabel(r'$I_\mathrm{em}/I_0$')
+    # ax.set_ylabel(r'$I_\mathrm{em}/I_0$')
     ax.set_ylim(0,1)
     if text_string is not None:
         ax.text( 7.5, 0.8, s=text_string )
-    # ax.legend()
+    ax.legend()
     if savepath is not None:
         plt.savefig(savepath)
     plt.show()
