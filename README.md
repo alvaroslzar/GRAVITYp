@@ -98,7 +98,7 @@ Let us know if you use **GRAVITYp** in your publication and we'll add it to this
 
 **Using the Python code**
 
-- Horizon singularity and energy conditions in time-dependent and spherically symmetric spacetime, S. Nojiri et al., *In preparation*
+- Horizon singularity, energy conditions and shadows in time-dependent and spherically symmetric spacetime, S. Nojiri et al., [arXiv:2608.15740 [gr-qc]](https://arxiv.org/abs/2608.15740)
 
 **Using the original Wolfram Mathematica code**
 
