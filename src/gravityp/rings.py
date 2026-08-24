@@ -146,9 +146,9 @@ def compute_optimal_array_steps(bmin, bmax, rings,
                 np.arange(ring["retro_p_ring"][0],ring["p_ring"][1],steps[2])
             )
 
-    bs_direct = np.concat(bs_direct)
-    bs_lensed = np.concat(bs_lensed)
-    bs_p_ring = np.concat(bs_p_ring)
+    bs_direct = np.concatenate(bs_direct)
+    bs_lensed = np.concatenate(bs_lensed)
+    bs_p_ring = np.concatenate(bs_p_ring)
 
     if joint:
         total = np.sort( np.concatenate([bs_direct, bs_lensed, bs_p_ring]) )
@@ -208,9 +208,9 @@ def compute_optimal_array_Npoints(bmin, bmax, rings,
                 np.linspace(ring["retro_p_ring"][0],ring["p_ring"][1],Npoints)
             )
 
-    bs_direct = np.concat(bs_direct)
-    bs_lensed = np.concat(bs_lensed)
-    bs_p_ring = np.concat(bs_p_ring)
+    bs_direct = np.concatenate(bs_direct)
+    bs_lensed = np.concatenate(bs_lensed)
+    bs_p_ring = np.concatenate(bs_p_ring)
 
     if joint:
         total = np.sort( np.concatenate([bs_direct, bs_lensed, bs_p_ring]) )
