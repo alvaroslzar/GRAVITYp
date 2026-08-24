@@ -10,7 +10,16 @@ from bisect import bisect_right
 from .utils import to_tuple
 
 
-__all__ = ["compute_geodesic"]
+__all__ = [
+    "potential",
+    "get_increasing_maxima",
+    "find_interval",
+    "find_rmin",
+    "geodesic_in",
+    "geodesic_out",
+    "compute_outgoing",
+    "compute_geodesic",
+]
 
 DEFAULT_NPOINTS = 100000  # ODE integration resolution
 DEFAULT_R0 = 1000.0  # Asymptotic boundary for initial conditions
