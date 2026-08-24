@@ -11,6 +11,7 @@ from .ray_tracing import *
 from .rings import *
 from .transfer_functions import *
 from .emission_models import *
+from .shadows import *
 
 import email.utils
 from importlib.metadata import metadata, PackageNotFoundError

@@ -490,43 +490,43 @@ import scipy.optimize as optimize
 # def uniform(r):
 #     return np.ones(shape=r.shape)
 
-#############################################
-#                  SHADOWS                  #
-#############################################
+# #############################################
+# #                  SHADOWS                  #
+# #############################################
 
-from .utils import to_tuple
-from .transfer_functions import transfer_function
+# from .utils import to_tuple
+# from .transfer_functions import transfer_function
 
-def redshift(r, radial_fun, radial_params):
-    """Gravitational redshift"""
-    return np.sqrt(radial_fun(r, *to_tuple(radial_params)))
+# def redshift(r, radial_fun, radial_params):
+#     """Gravitational redshift"""
+#     return np.sqrt(radial_fun(r, *to_tuple(radial_params)))
 
-def observed_intensity(eval_points, bs, rbs, emission_model, kwargs):
-    radial_fun = kwargs['radial_fun']
-    radial_params = kwargs['radial_params']
-    intensity = emission_model(rbs)*redshift(rbs, radial_fun, radial_params)**4
-    return np.interp(eval_points, bs, intensity, left=0, right=0)
+# def observed_intensity(eval_points, bs, rbs, emission_model, kwargs):
+#     radial_fun = kwargs['radial_fun']
+#     radial_params = kwargs['radial_params']
+#     intensity = emission_model(rbs)*redshift(rbs, radial_fun, radial_params)**4
+#     return np.interp(eval_points, bs, intensity, left=0, right=0)
 
-def total_intensity(bs, bs_transfer_list, emission_model, kwargs, correction=0):
-    # impact_param_list = [
-    #     np.linspace(0, np.sqrt(2)*10, 100), # direct
-    #     np.linspace(rings['retro_lensed'][0], rings['lensed'][1], 100), # lensed
-    #     np.linspace(rings['retro_p_ring'][0], rings['p_ring'][1], 100) # photon ring
-    # ]
-    intensity = np.zeros(shape=bs.shape) # Important to use bs.shape instead of len(bs)
+# def total_intensity(bs, bs_transfer_list, emission_model, kwargs, correction=0):
+#     # impact_param_list = [
+#     #     np.linspace(0, np.sqrt(2)*10, 100), # direct
+#     #     np.linspace(rings['retro_lensed'][0], rings['lensed'][1], 100), # lensed
+#     #     np.linspace(rings['retro_p_ring'][0], rings['p_ring'][1], 100) # photon ring
+#     # ]
+#     intensity = np.zeros(shape=bs.shape) # Important to use bs.shape instead of len(bs)
 
-    for order, bb in enumerate(bs_transfer_list):
-        points = transfer_function(bb, order, correction, **kwargs)
-        intensity += observed_intensity(bs, *points, emission_model, kwargs)
+#     for order, bb in enumerate(bs_transfer_list):
+#         points = transfer_function(bb, order, correction, **kwargs)
+#         intensity += observed_intensity(bs, *points, emission_model, kwargs)
 
-    return intensity
+#     return intensity
 
-def compute_points(bs_transfer_list, emission_model, kwargs, Npixels):
-    x = np.linspace(-10, 10, np.sqrt(Npixels).astype(int) )
-    y = np.linspace(-10, 10, np.sqrt(Npixels).astype(int) )
-    X,Y = np.meshgrid(x, y)
-    B = np.sqrt(X**2 + Y**2)
-    return total_intensity(B, bs_transfer_list, emission_model, kwargs)
+# def compute_points(bs_transfer_list, emission_model, kwargs, Npixels):
+#     x = np.linspace(-10, 10, np.sqrt(Npixels).astype(int) )
+#     y = np.linspace(-10, 10, np.sqrt(Npixels).astype(int) )
+#     X,Y = np.meshgrid(x, y)
+#     B = np.sqrt(X**2 + Y**2)
+#     return total_intensity(B, bs_transfer_list, emission_model, kwargs)
 
 
 #############################################
@@ -538,9 +538,11 @@ from matplotlib.patches import Circle
 from matplotlib import colors
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
-from .utils import to_list
+from .utils import to_tuple, to_list
 from .geodesic_integration import compute_geodesic
 from .ray_tracing import compute_nturns, get_order
+from .transfer_functions import transfer_function
+from .shadows import total_intensity, compute_points
 
 def plot_metric_function(ax, r_range, fun, param, name):
     ax.plot(r_range, fun(r_range,param), label=f'{name}={param:.2f}')
