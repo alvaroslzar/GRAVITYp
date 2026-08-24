@@ -4,7 +4,7 @@ compact objects in General Relativity.
 
 Source:    https://github.com/alvaroslzar/GRAVITYp
 """
-from .module import *
+# from .module import *
 from .utils import *
 from .geodesic_integration import *
 from .ray_tracing import *
@@ -12,6 +12,7 @@ from .rings import *
 from .transfer_functions import *
 from .emission_models import *
 from .shadows import *
+from .plots import *
 
 import email.utils
 from importlib.metadata import metadata, PackageNotFoundError
