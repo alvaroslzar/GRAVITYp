@@ -186,33 +186,35 @@ import scipy.optimize as optimize
 
 #     return (rr,phi)
 
-#############################################
-#                RAY TRACING                #
-#############################################
+# #############################################
+# #                RAY TRACING                #
+# #############################################
 
-from .geodesic_integration import compute_geodesic
+# from .geodesic_integration import compute_geodesic
 
-def compute_nturns_scalar(b, **kwargs):
-    (_,phi) = compute_geodesic(b, **kwargs)
-    return np.abs(phi[-1])/(2*np.pi)
+# def compute_nturns_scalar(b, **kwargs):
+#     (_,phi) = compute_geodesic(b, **kwargs)
+#     return np.abs(phi[-1])/(2*np.pi)
                             
-def compute_nturns(bs, **kwargs):
-    return np.array([compute_nturns_scalar(b, **kwargs) for b in np.atleast_1d(bs)])
+# def compute_nturns(bs, **kwargs):
+#     return np.array([compute_nturns_scalar(b, **kwargs) for b in np.atleast_1d(bs)])
 
-def get_order(deviation: float, correction: float=0) -> int:
-    """
-    Computes the number of turns nturn = deviation/(2*pi) and maps:
-    - n < 3/4 -> 0 (direct image)
-    - 3/4 < n < 5/4 -> 1 (lensed image)
-    - n > 5/4 -> 2 (photon ring)
-    """
-    nturns = abs(deviation - correction)/(2*np.pi) # We take absolute value for rays with b<0
-    return int(nturns > 0.75) + int(nturns > 1.25)
+# def get_order(deviation: float, correction: float=0) -> int:
+#     """
+#     Computes the number of turns nturn = deviation/(2*pi) and maps:
+#     - n < 3/4 -> 0 (direct image)
+#     - 3/4 < n < 5/4 -> 1 (lensed image)
+#     - n > 5/4 -> 2 (photon ring)
+#     """
+#     nturns = abs(deviation - correction)/(2*np.pi) # We take absolute value for rays with b<0
+#     return int(nturns > 0.75) + int(nturns > 1.25)
 
 
 #############################################
 #                   RINGS                   #
 #############################################
+
+from .ray_tracing import compute_nturns_scalar
 
 def find_ring_edge(fun, lower_bound, upper_bound, to_upper=True) -> float:
     """Returns the impact parameter value for which the number of turns is 0.75 or 1.25 (depending on fun)"""
@@ -421,6 +423,8 @@ def compute_optimal_array_Npoints(bmin, bmax, rings,
 
 from scipy.interpolate import CubicSpline
 
+from .geodesic_integration import compute_geodesic
+
 def transfer_function(bb, order, correction: float=0, **kwargs):
     bs = []
     rbs = []
@@ -534,6 +538,7 @@ from matplotlib import colors
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 from .utils import to_list
+from .ray_tracing import compute_nturns, get_order
 
 def plot_metric_function(ax, r_range, fun, param, name):
     ax.plot(r_range, fun(r_range,param), label=f'{name}={param:.2f}')
