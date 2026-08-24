@@ -10,6 +10,7 @@ from .geodesic_integration import *
 from .ray_tracing import *
 from .rings import *
 from .transfer_functions import *
+from .emission_models import *
 
 import email.utils
 from importlib.metadata import metadata, PackageNotFoundError
