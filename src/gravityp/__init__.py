@@ -8,6 +8,7 @@ from .module import *
 from .utils import *
 from .geodesic_integration import *
 from .ray_tracing import *
+from .rings import *
 
 import email.utils
 from importlib.metadata import metadata, PackageNotFoundError
