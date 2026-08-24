@@ -87,7 +87,7 @@ The use of **GRAVITYp** in scientific publications must be properly acknowledged
     month = jul,
     title = {{GRAVITYp: Geodesic rays and visualization of intensity profiles}},
     url = {https://github.com/alvaroslzar/GRAVITYp},
-    version = {0.0.1},
+    version = {0.1.0},
     year = {2026}
 }
 ```

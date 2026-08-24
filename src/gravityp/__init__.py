@@ -29,7 +29,7 @@ __name__ = "gravityp"
 
 try:
     _meta = metadata(__name__)
-    __version__ = _meta.get("Version", "0.0.1")
+    __version__ = _meta.get("Version", "0.1.0")
 
     # setuptools packs pyproject.toml authors into the 'Author-email' header
     _author_email_header = _meta.get("Author-email")
@@ -49,6 +49,6 @@ try:
         __email__ = None
 
 except PackageNotFoundError:
-    __version__ = "0.0.1-dev"
+    __version__ = "0.1.0"
     __author__ = "Gonzalo J. Olmo, Diego Rubiera-Garcia, João Luís Rosa, Diego Sáez-Chillón Gómez, Álvaro Salazar-Cuadros"
     __email__ = None

@@ -19,7 +19,7 @@ authors:
   - family-names: "Salazar-Cuadros"
     given-names: "Álvaro"
     orcid: "https://orcid.org/0009-0006-0252-9073"
-version: "0.0.1"
+version: "0.1.0"
 date-released: "2026-07-29"
 repository-code: "https://github.com/alvaroslzar/GRAVITYp"
 keywords:

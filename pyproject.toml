@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gravityp"
-version = "0.0.1"
+version = "0.1.0"
 authors = [
   { name="Gonzalo J. Olmo", email="gonzalo.olmo@uv.es" },
   { name="Diego Rubiera Garcia", email="drubiera@ucm.es" },
