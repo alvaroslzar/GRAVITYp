@@ -7,7 +7,7 @@ import numpy as np
 from .geodesic_integration import compute_geodesic
 
 
-__all__ = ["compute_nturns_scalar", "compute_nturns_scalar", "get_order"]
+__all__ = ["compute_nturns_scalar", "compute_nturns", "get_order"]
 
 
 def compute_nturns_scalar(b, **kwargs):
