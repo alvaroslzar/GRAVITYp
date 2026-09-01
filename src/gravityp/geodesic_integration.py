@@ -110,7 +110,6 @@ def geodesic_out(phi, r, b, radial_fun, radial_params, areal, areal_params):
 
 def compute_outgoing(r_phs, inner_edge, rmin) -> bool:
     """Returns a boolean that tells whether to compute outgoing geodesic after reaching rmin"""
-    # TODO: Organizar esto para que sea más claro, que hasta ahora era prueba y error
     compute = False
     if (len(r_phs)>0): # There is at least 1 photon sphere
         innermost_photon_sphere = np.array(r_phs).min()

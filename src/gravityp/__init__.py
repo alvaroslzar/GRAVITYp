@@ -5,14 +5,6 @@ compact objects in General Relativity.
 Source:    https://github.com/alvaroslzar/GRAVITYp
 """
 
-# TODO 02: Translate Spanish comments to English
-# TODO 03: Clean up commented code
-# TODO 04: Decide docstring format for consistency
-# TODO 05: Decide if all functions are part of the public API
-# TODO 06: Add docstrings to API functions
-# TODO 07: Check for in-function TODOs
-# TODO 08: Think about adding in __name__=='__main__'
-
 from .utils import *
 from .geodesic_integration import *
 from .ray_tracing import *

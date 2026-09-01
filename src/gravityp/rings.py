@@ -103,7 +103,6 @@ def compute_optimal_array_steps(bmin, bmax, rings,
     If joint=False, these three contributions are returned as a triplet:
     ( bs_direct, bs_lensed, bs_p_ring )
     """
-    # TODO: hacer docstring más explicativo (fill está sin explicar)
     bs_direct = []
     bs_lensed = []
     bs_p_ring = []
@@ -165,7 +164,6 @@ def compute_optimal_array_Npoints(bmin, bmax, rings,
     If joint=False, these three contributions are returned as a triplet:
     ( bs_direct, bs_lensed, bs_p_ring )
     """
-    # TODO: hacer docstring más explicativo (fill está sin explicar)
     bs_direct = []
     bs_lensed = []
     bs_p_ring = []
