@@ -1,14 +1,15 @@
 # GRAVITYp
 
-**GRAVITYp** is a Python package for studying the optical appearance of spherically symmetric compact objects in General Relativity. It stands for **G**eodesic **RA**ys and **V**isualization of **I**ntensi**TY** **p**rofiles. 
+**GRAVITYp** is a Python package for studying the optical appearance of spherically symmetric compact objects in General Relativity.
+It stands for **G**eodesic **RA**ys and **V**isualization of **I**ntensi**TY** **p**rofiles. 
 
 ## About the project
 
-**GRAVITYp** was originally a numerical code written in Wolfram language developed by G.J. Olmo, D. Rubiera García, J.L. Rosa and D. Sáez-Chillón. It was developed to study the optical appearance or *shadow* cast by black holes, wormholes and different kinds of exotic compact objects, and it was inspired by the work of S.E. Gralla et al. [arXiv:1906.00873](https://arxiv.org/abs/1906.00873).
+This is the Python implementation of **GRAVITYp**, which is originally a numerical code in Wolfram language developed by G.J. Olmo, D. Rubiera García, J.L. Rosa, D. Sáez-Chillón and collaborators [arXiv:2307.06778v2](https://arxiv.org/abs/2307.06778v2).
+It was developed to study the optical appearance or *shadow* cast by black holes, wormholes and different kinds of exotic compact objects, inspired by the work of S.E. Gralla et al. [arXiv:1906.00873](https://arxiv.org/abs/1906.00873).
 
-Then, Á. Salazar Cuadros preferred to work on Python seeking faster execution times for simulations and a language better suited for Version Control Systems (VCS), and that's how this project was born.
-
-The goal of this open source version is to provide open access to anyone interested in using the package or learning how simulated shadow images are generated.
+Then, Á. Salazar Cuadros preferred to work on Python seeking faster execution times for simulations and a language better suited for Version Control Systems (VCS), and that's how the Python implementation was born.
+The goal of this open source version is to provide open access to anyone interested in using the package or learning how simulated black hole shadow images are generated.
 
 ## Installation
 
@@ -65,9 +66,12 @@ For a more detailed explanation, check the Jupyter notebooks in the [Examples](E
 
 ### Intensity profiles and black hole shadows
 
-The primary use is to obtain the observed intensity profile $I_\mathrm{ob}(b)$ as a function of the impact parameter $b$ given some predefined emission profile $I_\mathrm{em}(r)$. The emitted light is due to the matter in the accretion disk, which is assumed to be both geometrically and optically thin. Moreover, the orientation is assumed to be face-on with respect to the accretion disk, so the optical appearance has have rotational symmetry.
+The primary use is to obtain the observed intensity profile $I_\mathrm{ob}(b)$ as a function of the impact parameter $b$ given some predefined emission profile $I_\mathrm{em}(r)$.
+The emitted light is due to the matter in the accretion disk, which is assumed to be both geometrically and optically thin.
+Moreover, the orientation is assumed to be face-on with respect to the accretion disk, so the optical appearance has have rotational symmetry.
 
-In the following images, the emission profile of the accretion disk has been chosen to peak at the event horizon $r=2M$, and the optical appearance corresponds to a Schwarzschild black hole. The code properly reproduces the predicted light rings up to two intersections with the accretion disk, as well as the central brightness depression or *shadow* characteristic of compact objects such as black holes.
+In the following images, the emission profile of the accretion disk has been chosen to peak at the event horizon $r=2M$, and the optical appearance corresponds to a Schwarzschild black hole.ç
+The code properly reproduces the predicted light rings up to two intersections with the accretion disk, as well as the central brightness depression or *shadow* characteristic of compact objects such as black holes.
 
 ![emitted](docs/images/README_emitted.png)
 ![observed](docs/images/README_observed.png)
@@ -83,18 +87,20 @@ Finally, for a more advanced topic regarding compact objects, watch Prof. D. Sá
 
 ## Citation
 
-The use of **GRAVITYp** in scientific publications must be properly acknowledged. Please cite:
+The use of **GRAVITYp** in scientific publications must be properly acknowledged.
+Please cite the following:
 
 **BibTeX**
 ```
-@software{Olmo_GRAVITYp_Geodesic_RAys_2026,
-    author = {Olmo, Gonzalo J. and Rubiera-García, Diego and Rosa, João Luís and Sáez-Chillón Gómez, Diego and Salazar-Cuadros, Álvaro},
-    license = {MIT},
-    month = jul,
-    title = {{GRAVITYp: Geodesic rays and visualization of intensity profiles}},
-    url = {https://github.com/alvaroslzar/GRAVITYp},
-    version = {0.1.0},
-    year = {2026}
+@article{Nojiri:2026tjn,
+    author = "Nojiri, Shin'ichi and Odintsov, Sergei D. and S{\'a}ez-Chill{\'o}n G{\'o}mez, Diego and Cuadros, {\'A}lvaro Salazar",
+    title = "{Horizon singularity, energy conditions and shadows in time-dependent and spherically symmetric spacetime}",
+    eprint = "2608.15740",
+    archivePrefix = "arXiv",
+    primaryClass = "gr-qc",
+    reportNumber = "KEK-TH-2861, KEK-Cosmo-0429",
+    month = "8",
+    year = "2026"
 }
 ```
 
@@ -102,6 +108,9 @@ The use of **GRAVITYp** in scientific publications must be properly acknowledged
 
 Let us know if you use **GRAVITYp** in your publication, and we will add it to the [list of publications](/docs/PUBLICATIONS.md)!
 
+## Author
+
+The author and mantainer of the Python code is Álvaro Salazar Cuadros.
 
 ## License
 
