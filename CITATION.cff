@@ -1,26 +1,17 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
-title: "GRAVITYp: Geodesic RAys and Visualization of IntensiTY profiles"
-abstract: "A Python library to study the optical appearance and shadows of spherically symmetric compact objects in General Relativity."
+title: "GRAVITYp (Python): Geodesic RAys and Visualization of IntensiTY profiles"
+abstract: "A Python package to study the optical appearance and shadows of spherically symmetric compact objects in General Relativity."
 authors:
-  - family-names: "Olmo"
-    given-names: "Gonzalo J."
-    orcid: "https://orcid.org/0000-0001-9857-0412"
-  - family-names: "Rubiera-García"
-    given-names: "Diego"
-    orcid: "https://orcid.org/0000-0003-3984-9864"
-  - family-names: "Rosa"
-    given-names: "João Luís"
-    orcid: "https://orcid.org/0000-0003-4148-7372"
-  - family-names: "Sáez-Chillón Gómez"
-    given-names: "Diego"
-    orcid: "https://orcid.org/0000-0002-0714-2680"
   - family-names: "Salazar-Cuadros"
     given-names: "Álvaro"
     orcid: "https://orcid.org/0009-0006-0252-9073"
-version: "0.1.0"
-date-released: "2026-07-29"
+  - family-names: "Sáez-Chillón Gómez"
+    given-names: "Diego"
+    orcid: "https://orcid.org/0000-0002-0714-2680"
+version: 0.1.0
+date-released: 2026-09-04
 repository-code: "https://github.com/alvaroslzar/GRAVITYp"
 keywords:
   - general relativity
@@ -29,3 +20,26 @@ keywords:
   - compact objects
   - shadows
 license: MIT
+preferred-citation:
+  type: article
+  title: "Horizon singularity, energy conditions and shadows in time-dependent and spherically symmetric spacetime"
+  authors:
+    - family-names: "Nojiri"
+      given-names: "Shin'ichi"
+      orcid: "https://orcid.org/0000-0002-0773-8011"
+    - family-names: "Odintsov"
+      given-names: "Sergei D."
+      orcid: "https://orcid.org/0000-0002-3529-7030"
+    - family-names: "Sáez-Chillón Gómez"
+      given-names: "Diego"
+      orcid: "https://orcid.org/0000-0002-0714-2680"
+    - family-names: "Salazar Cuadros"
+      given-names: "Álvaro"
+      orcid: "https://orcid.org/0009-0006-0252-9073"
+  year: 2026
+  month: 8
+  identifiers:
+    - type: other
+      value: "arXiv:2608.15740"
+      description: "arXiv preprint"
+  url: "https://arxiv.org/abs/2608.15740"
