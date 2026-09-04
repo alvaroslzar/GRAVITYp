@@ -19,12 +19,16 @@ The goal of this open source version is to provide open access to anyone interes
 pip install gravityp
 ```
 
-Alternatively, you can clone `GRAVITYp` locally in editable mode for research and development and install it in your virtual environment
+Alternatively, you can [fork this repository](https://github.com/alvaroslzar/GRAVITYp/fork) and clone it locally in editable mode for research and development
 
 ```bash
-git clone git@github.com:alvaroslzar/GRAVITYp.git       # SSH
-git clone https://github.com/alvaroslzar/GRAVITYp.git   # HTTPS
+git clone git@github.com:<YOUR_USERNAME>/GRAVITYp.git       # SSH
+git clone https://github.com/<YOUR_USERNAME>/GRAVITYp.git   # HTTPS
+```
 
+Then, install it
+
+```bash
 cd GRAVITYp
 pip install -e .
 ```
