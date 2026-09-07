@@ -26,11 +26,11 @@ git clone git@github.com:<YOUR_USERNAME>/GRAVITYp.git       # SSH
 git clone https://github.com/<YOUR_USERNAME>/GRAVITYp.git   # HTTPS
 ```
 
-Then, install it
+Then, install it (toguether with Jupyter notebooks optional dependencies)
 
 ```bash
 cd GRAVITYp
-pip install -e .
+pip install -e ".[notebooks]"
 ```
 
 ## Usage
