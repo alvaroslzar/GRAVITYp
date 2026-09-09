@@ -13,11 +13,15 @@ The goal of this open source version is to provide open access to anyone interes
 
 ## Installation
 
+### From PyPI
+
 **GRAVITYp** is available on [PyPI](https://pypi.org/project/gravityp/)
 
 ```bash
 pip install gravityp
 ```
+
+### From source
 
 Alternatively, you can [fork this repository](https://github.com/alvaroslzar/GRAVITYp/fork) and clone it locally in editable mode for research and development
 
@@ -26,12 +30,21 @@ git clone git@github.com:<YOUR_USERNAME>/GRAVITYp.git       # SSH
 git clone https://github.com/<YOUR_USERNAME>/GRAVITYp.git   # HTTPS
 ```
 
-Then, install it (toguether with Jupyter notebooks optional dependencies)
+Then, install it together with the optional dependencies required to run the Jupyter notebooks and the Git notebook filter:
 
 ```bash
 cd GRAVITYp
 pip install -e ".[notebooks]"
 ```
+The repository includes a Git filter that removes notebook outputs and metadata when `.ipynb` files are staged.
+Run the setup script once after installing the dependencies:
+
+```bash
+bash scripts/setup-nb-filter.sh
+```
+
+This is stored in `.git/config`, which is local to your clone and is not tracked by Git.
+After this setup, adding a notebook with `git add` strips its outputs and metadata from the staged version while leaving the working copy unchanged.
 
 ## Usage
 
