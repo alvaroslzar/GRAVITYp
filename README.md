@@ -32,11 +32,13 @@ git clone git@github.com:<YOUR_USERNAME>/GRAVITYp.git       # SSH
 git clone https://github.com/<YOUR_USERNAME>/GRAVITYp.git   # HTTPS
 ```
 
-Then, install it together with the optional dependencies required to run the Jupyter notebooks and the Git notebook filter:
+Then, create a virtual environment and install the package together with the dependencies for the Jupyter notebooks and the tests (`--group` requires pip >= 25.1):
 
 ```bash
 cd GRAVITYp
-pip install -e ".[notebooks]"
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -e ".[notebooks]" --group test
 ```
 The repository includes a Git filter that removes notebook outputs and metadata when `.ipynb` files are staged.
 Run the setup script once after installing the dependencies:
@@ -47,6 +49,13 @@ bash scripts/setup-nb-filter.sh
 
 This is stored in `.git/config`, which is local to your clone and is not tracked by Git.
 After this setup, adding a notebook with `git add` strips its outputs and metadata from the staged version while leaving the working copy unchanged.
+
+#### Running the tests
+
+```bash
+pytest                                    # test suite in tests/
+pytest --doctest-modules src/gravityp     # examples in the docstrings
+```
 
 ## Usage
 
