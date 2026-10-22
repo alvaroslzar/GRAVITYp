@@ -12,13 +12,12 @@ __all__ = ["transfer_function", "compute_inner_shadow"]
 
 
 def transfer_function(bb: ArrayLike, order: int, co: BaseCompactObject,
-                      correction: float = 0, **geodesic_kwargs
-                      ) -> tuple[np.ndarray, np.ndarray]:
+                      **geodesic_kwargs) -> tuple[np.ndarray, np.ndarray]:
     r"""Coordinate :math:`r` where geodesics hit the disk the (order+1)-th time.
 
     For a face-on observer, a light ray with impact parameter :math:`b` crosses
     the disk for the :math:`(m+1)`-th time when its deflection reaches
-    :math:`\phi_m = m\pi + \pi/2 + \phi_c`. The transfer function
+    :math:`\phi_m = m\pi + \pi/2`. The transfer function
     :math:`r_m(b)` is the radial coordinate at that point [1]_.
 
     Parameters
@@ -30,11 +29,6 @@ def transfer_function(bb: ArrayLike, order: int, co: BaseCompactObject,
         2 (photon ring).
     co : BaseCompactObject
         Compact object defining the geometry.
-    correction : float, optional
-        Additional angle :math:`\phi_c` the light ray must travel to reach the
-        accretion disk, which depends on the observer's inclination and on the
-        polar angle on the observer's screen. Inclined observers are not
-        supported yet, so only the face-on value 0 (default) is meaningful.
 
     Returns
     -------
@@ -86,10 +80,10 @@ def transfer_function(bb: ArrayLike, order: int, co: BaseCompactObject,
     for b in np.atleast_1d(bb):
         (rr, phi) = compute_geodesic(b, co, **geodesic_kwargs)
 
-        if abs(phi[-1]) > (order*np.pi + np.pi/2 + correction):
+        if abs(phi[-1]) > (order*np.pi + np.pi/2):
             try:
                 f_hat = CubicSpline(phi, rr)
-                r_b = f_hat(order*np.pi+np.pi/2+correction)
+                r_b = f_hat(order*np.pi+np.pi/2)
                 rbs.append(r_b)
                 bs.append(b)
             except ValueError:

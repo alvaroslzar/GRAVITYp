@@ -310,20 +310,19 @@ def make_geodesics_plot(bs_dict: ArrayLike | dict, co: BaseCompactObject,
 
 
 def _plot_transfer_function(axes, bs, order, co: BaseCompactObject,
-                            correction : float = 0, **geodesic_kwargs):
+                            **geodesic_kwargs):
     """Plots the transfer function of the given order"""
     # NOTE: bs in bs_list can also be lists for lensed and photon ring, which
     # will be plotted separately
     order_colors = ['dodgerblue', 'orange', 'red']
     image = ['Direct', 'Lensed', 'Photon ring']
-    points = transfer_function(bs, order, co, correction, **geodesic_kwargs)
+    points = transfer_function(bs, order, co, **geodesic_kwargs)
     axes.plot(*points, color=order_colors[order],
               label=f'{image[order]}', linewidth=1)
 
 
 def make_transfer_function_plot(b_crits: Sequence[float] | np.ndarray,
                                 co: BaseCompactObject, bs_list: Sequence,
-                                correction: float = 0,
                                 figsize: tuple[float, float] = (7, 7),
                                 ax: Axes | None = None, **geodesic_kwargs
                                 ) -> tuple[Figure, Axes]:
@@ -344,11 +343,6 @@ def make_transfer_function_plot(b_crits: Sequence[float] | np.ndarray,
         starting from order 0. For orders 1 and 2, an element can also be a
         list or tuple of arrays, plotted as separate curves (e.g. the inner
         and outer parts of a ring).
-    correction : float, optional
-        Additional angle the light ray must travel to reach the accretion
-        disk, which depends on the observer's inclination and on the polar
-        angle on the observer's screen. Inclined observers are not supported
-        yet, so only the face-on value 0 (default) is meaningful.
     figsize : tuple of float, optional
         Size of the new figure, ignored if `ax` is given. Default is (7, 7).
     ax : matplotlib.axes.Axes, optional
@@ -380,12 +374,12 @@ def make_transfer_function_plot(b_crits: Sequence[float] | np.ndarray,
     for order, bs in enumerate(bs_list):
         if order == 0:
             _plot_transfer_function(
-                ax, bs, order, co, correction, **geodesic_kwargs)
+                ax, bs, order, co, **geodesic_kwargs)
         else:
             bs_rings = bs if isinstance(bs, (list, tuple)) else [bs]
             for bs_ring in bs_rings:
                 _plot_transfer_function(
-                    ax, bs_ring, order, co, correction, **geodesic_kwargs)
+                    ax, bs_ring, order, co, **geodesic_kwargs)
 
     xticks = [i for i in range(0, 11, 2)]
     xticklabels = [f'{t}' for t in xticks]
