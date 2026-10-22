@@ -54,7 +54,7 @@ def observed_intensity(eval_points: np.ndarray, bs: np.ndarray,
 
 def total_intensity(bs: np.ndarray, bs_transfer_list: Sequence[np.ndarray],
                     emission_model: Callable, co: BaseCompactObject,
-                    correction: float = 0, **geodesic_kwargs) -> np.ndarray:
+                    **geodesic_kwargs) -> np.ndarray:
     r"""Observed intensity profile of a face-on accretion disk.
 
     The observed intensity at impact parameter :math:`b` adds the
@@ -80,11 +80,6 @@ def total_intensity(bs: np.ndarray, bs_transfer_list: Sequence[np.ndarray],
         Emitted intensity :math:`I_{em}(r)`, taking an ndarray of radii.
     co : BaseCompactObject
         Compact object defining the geometry.
-    correction : float, optional
-        Additional angle the light ray must travel to reach the accretion
-        disk, which depends on the observer's inclination and on the polar
-        angle on the observer's screen. Inclined observers are not supported
-        yet, so only the face-on value 0 (default) is meaningful.
 
     Returns
     -------
@@ -114,7 +109,7 @@ def total_intensity(bs: np.ndarray, bs_transfer_list: Sequence[np.ndarray],
 
     for order, bb in enumerate(bs_transfer_list):
         points = transfer_function(
-            bb, order, co, correction, **geodesic_kwargs)
+            bb, order, co, **geodesic_kwargs)
         intensity += observed_intensity(bs, *points, emission_model, co)
 
     return intensity
@@ -122,8 +117,7 @@ def total_intensity(bs: np.ndarray, bs_transfer_list: Sequence[np.ndarray],
 
 def compute_points(bs_transfer_list: Sequence[np.ndarray],
                    emission_model: Callable, co: BaseCompactObject,
-                   Npixels: float, correction: float = 0,
-                   **geodesic_kwargs) -> np.ndarray:
+                   Npixels: float, **geodesic_kwargs) -> np.ndarray:
     r"""Observed intensity on the observer's screen.
 
     The screen is a square grid covering ``[-10, 10]`` in units of M along
@@ -143,11 +137,6 @@ def compute_points(bs_transfer_list: Sequence[np.ndarray],
     Npixels : int or float
         Total number of pixels. The grid has ``int(sqrt(Npixels))`` pixels
         per side.
-    correction : float, optional
-        Additional angle the light ray must travel to reach the accretion
-        disk, which depends on the observer's inclination and on the polar
-        angle on the observer's screen. Inclined observers are not supported
-        yet, so only the face-on value 0 (default) is meaningful.
 
     Returns
     -------
@@ -172,4 +161,4 @@ def compute_points(bs_transfer_list: Sequence[np.ndarray],
     X, Y = np.meshgrid(x, y)
     B = np.sqrt(X**2 + Y**2)
     return total_intensity(B, bs_transfer_list, emission_model, co,
-                           correction, **geodesic_kwargs)
+                           **geodesic_kwargs)

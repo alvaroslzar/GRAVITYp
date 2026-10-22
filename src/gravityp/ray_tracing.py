@@ -59,11 +59,11 @@ def compute_nturns(bs: ArrayLike, co: BaseCompactObject,
                      for b in np.atleast_1d(bs)])
 
 
-def get_order(deviation: float, correction: float = 0) -> int:
+def get_order(deviation: float) -> int:
     r"""Order of a light ray from its total deflection.
 
-    The number of turns :math:`n = |\phi - \phi_c|/(2\pi)`, with :math:`\phi`
-    the deflection and :math:`\phi_c` the correction, is mapped to
+    The number of turns :math:`n = |\phi|/(2\pi)`, with :math:`\phi` the
+    deflection, is mapped to
 
     - 0 (direct image) if :math:`n \leq 3/4`,
     - 1 (lensed image) if :math:`3/4 < n \leq 5/4`,
@@ -74,11 +74,6 @@ def get_order(deviation: float, correction: float = 0) -> int:
     deviation : float
         Total deflection :math:`\phi` of the light ray, in radians. Negative
         values (rays with ``b < 0``) are also accepted.
-    correction : float, optional
-        Additional angle :math:`\phi_c` the light ray must travel to reach the
-        accretion disk, which depends on the observer's inclination and on the
-        polar angle on the observer's screen. Inclined observers are not
-        supported yet, so only the face-on value 0 (default) is meaningful.
 
     Returns
     -------
@@ -105,7 +100,7 @@ def get_order(deviation: float, correction: float = 0) -> int:
     (0, 1, 2)
     """
     # We take absolute value for rays with b<0
-    nturns = abs(deviation - correction) / (2*np.pi)
+    nturns = abs(deviation) / (2*np.pi)
     return int(nturns > 0.75) + int(nturns > 1.25)
 
 
