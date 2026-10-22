@@ -29,33 +29,32 @@ __all__ += emission_models.__all__
 __all__ += shadows.__all__
 __all__ += plots.__all__
 
-import email.utils
-from importlib.metadata import metadata, PackageNotFoundError
 
-__name__ = "gravityp"
+def _package_metadata():
+    """Returns (version, author, email) from the installed package metadata"""
+    # Imported here so they don't leak into the gravityp namespace
+    import email.utils
+    from importlib.metadata import metadata, PackageNotFoundError
 
-try:
-    _meta = metadata(__name__)
-    __version__ = _meta.get("Version")
+    try:
+        meta = metadata("gravityp")
+    except PackageNotFoundError:
+        return None, None, None
 
     # setuptools packs pyproject.toml authors into the 'Author-email' header
-    _author_email_header = _meta.get("Author-email")
+    author_email_header = meta.get("Author-email")
+    if not author_email_header:
+        return meta.get("Version"), meta.get("Author"), None
 
-    if _author_email_header:
-        # Parse header into [("Name", "email@domain.com"), ...]
-        _parsed_contacts = email.utils.getaddresses([_author_email_header])
+    # Parse header into [("Name", "email@domain.com"), ...]
+    contacts = email.utils.getaddresses([author_email_header])
+    names = [name for name, _ in contacts if name]
+    emails = [addr for _, addr in contacts if addr]
 
-        _names = [name for name, _ in _parsed_contacts if name]
-        _emails = [addr for _, addr in _parsed_contacts if addr]
+    # Format as strings so help(gravityp) displays them cleanly
+    author = ", ".join(names) if names else meta.get("Author")
+    return meta.get("Version"), author, ", ".join(emails) if emails else None
 
-        # Format as strings so help(gravityp) displays them cleanly
-        __author__ = ", ".join(_names) if _names else _meta.get("Author")
-        __email__ = ", ".join(_emails) if _emails else None
-    else:
-        __author__ = _meta.get("Author")
-        __email__ = None
 
-except PackageNotFoundError:
-    __version__ = None
-    __author__ = None
-    __email__ = None
+__version__, __author__, __email__ = _package_metadata()
+del _package_metadata
